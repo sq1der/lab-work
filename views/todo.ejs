@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Your ToDo List</h1>
+    <form action="/todo" method="POST">
+        <input type="text" name="task" placeholder="New Task" required>
+        <button type="submit">Add Task</button>
+    </form>
+    <ul>
+        <% todos.forEach(todo => { %>
+            <li><%= todo.task %></li>
+        <% }) %>
+    </ul>
+    <a href="/profile" class="btn btn-profile">Перейти в профиль</a>
+
+    <a href="/logout">Logout</a>
+    <%- include('partials/footer') %>
+</body>
+</html>
